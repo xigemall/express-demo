@@ -21,14 +21,15 @@ class userController{
     }
 
     setRedis(req,res){
-        redis.set('name','liu');
-        res.send('redis set')
+        const data = redis.set('name','liu');
+        res.send(data)
     }
     getRedis(req,res){
         redis.get('name',function(value){
             console.log(value)
+            res.send(value)
         });
-        res.send('redis')
+        // res.send('redis')
     }
 }
 
