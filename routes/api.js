@@ -22,4 +22,7 @@ app.route('/redis')
 app.route('/redis_set')
     .get(userController.setRedis);
 
+app.route('/mongo')
+    .get(userController.getMongo)
+
 module.exports =  app;

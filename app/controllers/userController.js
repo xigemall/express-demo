@@ -1,5 +1,6 @@
 const db = require('../../utils/mysql');
 const redis= require('../../utils/redis');
+const mongo = require('../../utils/mongodb')
 
 class userController{
     index(req, res) {
@@ -30,6 +31,19 @@ class userController{
             res.send(value)
         });
         // res.send('redis')
+    }
+
+    getMongo(req,res){
+        const MongoClient = require('mongodb').MongoClient;
+        const url = 'mongodb://192.168.0.18:27017';
+        MongoClient.connect(url,function(err,client){
+
+            client.db('data').collection('user').find({}).toArray(function(err,doc){
+                console.log(doc)
+                res.send(doc)
+            });
+
+        })
     }
 }
 

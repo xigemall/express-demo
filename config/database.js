@@ -8,8 +8,13 @@ module.exports = {
         port:3306,
     },
     redis:{
-        host:'192.168.0.25',
+        host:'192.168.0.18',
         port:6379,
         db:0,
+    },
+    mongo:{
+        host:'192.168.0.18',
+        port:27017,
+        db:'data',
     }
 };
