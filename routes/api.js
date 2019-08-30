@@ -9,6 +9,8 @@ const middleware = function(req,res,next){
 };
 app.use(middleware);
 
+router.post('/login',userController.login);
+
 app.route('/user')
     .get(userController.index)
     .post(userController.store);
@@ -24,5 +26,7 @@ app.route('/redis_set')
 
 app.route('/mongoose')
     .get(userController.getMongoose);
+
+app.use(router);
 
 module.exports =  app;

@@ -3,6 +3,11 @@ const redis = require('../../utils/redis');
 const User = require('../models/userModel');
 
 class userController {
+    login(request,res){
+        console.log(request.body)
+        res.json({user:'15882158753',password:'123456'})
+    }
+
     index(req, res) {
         const data = function (results) {
             res.send(results[0]);
